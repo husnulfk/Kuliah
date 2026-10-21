@@ -1,29 +1,29 @@
-# Pseudocode dan Dokumentasi 7 Program
+# Pseudocode dan Dokumentasi BKPP Week 2
 
 Dokumen ini berisi konversi tujuh program Go menjadi pseudocode dengan struktur:
 `program` → `kamus` → `algoritma` → `endfor` → `endprogram`.
 
 ## Daftar Program
 
-| No | Program | Fungsi Singkat |
-|----|---------|----------------|
-| 1 | bidangPersegi | Menghitung luas dan keliling persegi dari beberapa sisi |
-| 2 | cetakBarisan | Mencetak bilangan dari n sampai m |
-| 3 | cetakString | Mencetak sebuah kata sebanyak n kali |
-| 4 | faktorBilangan | Menampilkan setiap d dari 1..n beserta status apakah d faktor n |
-| 5 | faktorial | Menghitung n! |
-| 6 | ngoding | Menghitung rata-rata jam ngoding |
-| 7 | sandi | Menjumlahkan digit pertama dan digit terakhir dari tiap bilangan |
+| No  | Program        | Fungsi Singkat                                                   |
+| --- | -------------- | ---------------------------------------------------------------- |
+| 1   | bidangPersegi  | Menghitung luas dan keliling persegi dari beberapa sisi          |
+| 2   | cetakBarisan   | Mencetak bilangan dari n sampai m                                |
+| 3   | cetakString    | Mencetak sebuah kata sebanyak n kali                             |
+| 4   | faktorBilangan | Menampilkan setiap d dari 1..n beserta status apakah d faktor n  |
+| 5   | faktorial      | Menghitung n!                                                    |
+| 6   | ngoding        | Menghitung rata-rata jam ngoding                                 |
+| 7   | sandi          | Menjumlahkan digit pertama dan digit terakhir dari tiap bilangan |
 
 ## Konvensi Penulisan
 
-| Notasi | Arti | Padanan di Go |
-|--------|------|---------------|
-| `input(x)` | membaca nilai ke variabel x | `fmt.Scan(&x)` |
-| `output(x)` | menampilkan nilai x | `fmt.Println(x)` |
-| `x <- y` | memberi nilai y ke x | `x = y` |
-| `div` | pembagian bilangan bulat | `/` pada int |
-| `mod` | sisa bagi | `%` |
+| Notasi                          | Arti                                  | Padanan di Go             |
+| ------------------------------- | ------------------------------------- | ------------------------- |
+| `input(x)`                      | membaca nilai ke variabel x           | `fmt.Scan(&x)`            |
+| `output(x)`                     | menampilkan nilai x                   | `fmt.Println(x)`          |
+| `x <- y`                        | memberi nilai y ke x                  | `x = y`                   |
+| `div`                           | pembagian bilangan bulat              | `/` pada int              |
+| `mod`                           | sisa bagi                             | `%`                       |
 | `for i <- a to b do ... endfor` | perulangan dari a sampai b (inklusif) | `for i := a; i <= b; i++` |
 
 ---
@@ -33,6 +33,7 @@ Dokumen ini berisi konversi tujuh program Go menjadi pseudocode dengan struktur:
 **Deskripsi:** Program membaca jumlah persegi `n`, lalu untuk setiap persegi membaca panjang sisinya dan menampilkan luas serta kelilingnya.
 
 **Input:**
+
 - Baris pertama: `n` (jumlah persegi)
 - Berikutnya: `n` buah bilangan bulat (panjang sisi)
 
@@ -65,8 +66,8 @@ endprogram
 
 **Contoh:**
 
-| Input | Output |
-|-------|--------|
+| Input       | Output              |
+| ----------- | ------------------- |
 | `2` `3` `5` | `9 12` lalu `25 20` |
 
 ---
@@ -100,8 +101,8 @@ endprogram
 
 **Contoh:**
 
-| Input | Output |
-|-------|--------|
+| Input | Output                                     |
+| ----- | ------------------------------------------ |
 | `3 6` | `3` `4` `5` `6` (masing-masing satu baris) |
 
 ---
@@ -138,8 +139,8 @@ endprogram
 
 **Contoh:**
 
-| Input | Output |
-|-------|--------|
+| Input      | Output                                          |
+| ---------- | ----------------------------------------------- |
 | `3` `halo` | `halo` `halo` `halo` (masing-masing satu baris) |
 
 ---
@@ -174,9 +175,9 @@ endprogram
 
 **Contoh:**
 
-| Input | Output |
-|-------|--------|
-| `6` | `1 true`, `2 true`, `3 true`, `4 false`, `5 false`, `6 true` |
+| Input | Output                                                       |
+| ----- | ------------------------------------------------------------ |
+| `6`   | `1 true`, `2 true`, `3 true`, `4 false`, `5 false`, `6 true` |
 
 ---
 
@@ -213,9 +214,9 @@ endprogram
 
 **Contoh:**
 
-| Input | Output | Penjelasan |
-|-------|--------|------------|
-| `5` | `120` | 5 × 4 × 3 × 2 × 1 |
+| Input | Output | Penjelasan        |
+| ----- | ------ | ----------------- |
+| `5`   | `120`  | 5 × 4 × 3 × 2 × 1 |
 
 ---
 
@@ -256,8 +257,8 @@ endprogram
 
 **Contoh:**
 
-| Input | Output |
-|-------|--------|
+| Input           | Output               |
+| --------------- | -------------------- |
 | `3` `2` `4` `5` | `3.6666666666666665` |
 
 ---
@@ -271,6 +272,7 @@ endprogram
 **Output:** Total jumlah digit pertama dan digit terakhir dari semua bilangan.
 
 **Cara kerja:**
+
 - digit pertama = `bilangan div 1000`
 - digit terakhir = `bilangan mod 10`
 
@@ -303,6 +305,6 @@ endprogram
 
 **Contoh:**
 
-| Input | Output | Penjelasan |
-|-------|--------|------------|
-| `2` `1234` `5678` | `20` | (1+4) + (5+8) |
+| Input             | Output | Penjelasan    |
+| ----------------- | ------ | ------------- |
+| `2` `1234` `5678` | `20`   | (1+4) + (5+8) |
