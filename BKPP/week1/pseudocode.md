@@ -2,7 +2,6 @@
 
 Dokumen ini berisi konversi enam program Go menjadi pseudocode dengan struktur:
 `program` → `kamus` → `algoritma` → `endprogram`.
-Semua program di sini tidak memakai perulangan, jadi tidak ada `endfor`.
 
 ## Daftar Program
 
