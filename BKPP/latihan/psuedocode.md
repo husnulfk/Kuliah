@@ -1,4 +1,4 @@
-# Pseudocode dan Dokumentasi 10 Program (Bagian 3)
+# Pseudocode dan Dokumentasi 10 Program latihan
 
 Dokumen ini berisi konversi sepuluh program Go menjadi pseudocode dengan struktur:
 `program` → `kamus` → `algoritma` → `endprogram`.
