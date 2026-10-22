@@ -14,6 +14,7 @@ Dokumen ini berisi konversi tujuh program Go menjadi pseudocode dengan struktur:
 | 5   | faktorial      | Menghitung n!                                                    |
 | 6   | ngoding        | Menghitung rata-rata jam ngoding                                 |
 | 7   | sandi          | Menjumlahkan digit pertama dan digit terakhir dari tiap bilangan |
+| 8   | lele           | menghitung panjang lele setiap bulan                             |
 
 ## Konvensi Penulisan
 
@@ -308,3 +309,43 @@ endprogram
 | Input             | Output | Penjelasan    |
 | ----------------- | ------ | ------------- |
 | `2` `1234` `5678` | `20`   | (1+4) + (5+8) |
+
+## 8. lele
+
+**Deskripsi:** Program menghitung panjang ikan lele setelah 14 bulan. Panjang awal lele adalah 3,0 dan bertambah 0,3 setiap bulan. Program juga mencatat jumlah bulan yang sudah berlalu.
+
+**Input:** tidak ada (nilai awal dan jumlah bulan ditulis langsung di program)
+
+**Output:** Satu baris berisi `panjangLele jumlahBulan` dipisah spasi.
+
+**Cara kerja:** Pada setiap bulan (`i` dari 1 sampai 14), `panjangLele` ditambah 0,3 dan `jumlahBulan` ditambah 1.
+
+**Catatan:** Karena `panjangLele` bertipe real, penjumlahan 0,3 berulang kali bisa menghasilkan selisih kecil akibat pembulatan komputer. Nilai matematisnya 3,0 + 14 × 0,3 = 7,2, tetapi program Go menampilkan `7.1999999999999975`.
+
+**Pseudocode:**
+
+```
+program lele
+
+kamus
+    panjangLele : real       { panjang lele saat ini }
+    jumlahBulan : integer    { banyaknya bulan yang sudah berlalu }
+    i           : integer    { penghitung perulangan }
+
+algoritma
+    panjangLele <- 3.0
+    jumlahBulan <- 0
+    for i <- 1 to 14 do
+        panjangLele <- panjangLele + 0.3
+        jumlahBulan <- jumlahBulan + 1
+    endfor
+    output(panjangLele, jumlahBulan)
+
+endprogram
+```
+
+**Contoh:**
+
+| Input       | Output                  | Penjelasan                            |
+| ----------- | ----------------------- | ------------------------------------- |
+| (tidak ada) | `7.1999999999999975 14` | 3,0 + 14 × 0,3 ≈ 7,2 setelah 14 bulan |
