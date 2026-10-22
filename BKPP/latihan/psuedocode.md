@@ -18,6 +18,9 @@ Dokumen ini berisi konversi sepuluh program Go menjadi pseudocode dengan struktu
 | 9   | segitiga     | Memeriksa apakah tiga sisi dapat membentuk segitiga                          |
 | 10  | tigaDigit    | Memisahkan bilangan tiga digit menjadi digit ratusan, puluhan, dan satuan    |
 | 11  | isPalindrome | Memastikan bilangan terbaca sama dari depan maupun dari belakang             |
+| 12  | ganjilGenap  | menghitung berapa banyak bilangan ganjil dan genap dalam deret 1 sampai n.   |
+| 13  | fizzBuzz     | mencetak angka dari 1 hingga n dengan aturan pembagian tertent               |
+| 14  | isPrime      | membaca bilangan x, lalu menampilkan true jika x bilangan prima atau bukan.  |
 
 ## Konvensi Penulisan
 
@@ -468,3 +471,142 @@ endfunction
 | `121`  | `true`  | x = 1, revertedNumber = 12, dan 12 div 10 = 1 |
 | `10`   | `false` | berakhiran 0, langsung `false`                |
 | `1221` | `true`  | x = 12, revertedNumber = 12                   |
+
+## 12. deretGanjilGenap
+
+**Deskripsi:** Program membaca bilangan `n`, lalu menghitung berapa banyak bilangan ganjil dan genap dalam deret 1 sampai `n`.
+
+**Input:** `n` (bilangan bulat positif)
+
+**Output:** Satu baris dengan format `ganjil : ..., genap : ...`
+
+**Cara kerja:** Setiap `i` dari 1 sampai `n` diperiksa dengan `i mod 2`. Jika sisanya 0, `i` genap dan penghitung `genap` bertambah. Jika tidak, penghitung `ganjil` yang bertambah.
+
+**Catatan:** Di Go, variabel `int` otomatis bernilai 0. Di pseudocode, nilai awal `ganjil` dan `genap` ditulis eksplisit.
+
+**Pseudocode:**
+
+```
+program deretGanjilGenap
+
+kamus
+    n      : integer    { batas atas deret }
+    ganjil : integer    { banyaknya bilangan ganjil }
+    genap  : integer    { banyaknya bilangan genap }
+    i      : integer    { penghitung perulangan }
+
+algoritma
+    input(n)
+    ganjil <- 0
+    genap <- 0
+    for i <- 1 to n do
+        if i mod 2 = 0 then
+            genap <- genap + 1
+        else
+            ganjil <- ganjil + 1
+        endif
+    endfor
+    output("ganjil : ", ganjil, ", genap : ", genap)
+
+endprogram
+```
+
+**Contoh:**
+
+| Input | Output                  | Penjelasan                   |
+| ----- | ----------------------- | ---------------------------- |
+| `5`   | `ganjil : 3, genap : 2` | ganjil: 1, 3, 5; genap: 2, 4 |
+
+---
+
+## 13. fizzBuzz
+
+**Deskripsi:** Program membaca bilangan `n`, lalu untuk setiap `i` dari 1 sampai `n` mencetak `FizzBuzz` jika `i` kelipatan 15, `Fizz` jika kelipatan 3, `Buzz` jika kelipatan 5, dan angka `i` itu sendiri jika bukan ketiganya.
+
+**Input:** `n` (bilangan bulat positif)
+
+**Output:** `n` baris, satu per bilangan.
+
+**Catatan:** Pemeriksaan kelipatan 15 harus lebih dulu, karena kelipatan 15 juga kelipatan 3 dan 5.
+
+**Pseudocode:**
+
+```
+program fizzBuzz
+
+kamus
+    n : integer    { batas atas deret }
+    i : integer    { penghitung perulangan }
+
+algoritma
+    input(n)
+    for i <- 1 to n do
+        if i mod 15 = 0 then
+            output("FizzBuzz")
+        else if i mod 3 = 0 then
+            output("Fizz")
+        else if i mod 5 = 0 then
+            output("Buzz")
+        else
+            output(i)
+        endif
+    endfor
+
+endprogram
+```
+
+**Contoh:**
+
+| Input | Output                                               |
+| ----- | ---------------------------------------------------- |
+| `5`   | `1` `2` `Fizz` `4` `Buzz` (masing-masing satu baris) |
+
+---
+
+## 14. isPrime
+
+**Deskripsi:** Program membaca bilangan `x`, lalu menampilkan `true` jika `x` bilangan prima dan `false` jika bukan.
+
+**Input:** `x` (bilangan bulat)
+
+**Output:** `true` atau `false`
+
+**Cara kerja:** Bilangan kurang dari atau sama dengan 1 bukan prima. Untuk bilangan lain, `x` dibagi dengan setiap `i` dari 2 sampai `x - 1`. Jika ada yang habis membagi, `x` bukan prima dan perulangan langsung dihentikan dengan `break`.
+
+**Catatan:** Di Go, kasus `x <= 1` diakhiri dengan `return`. Di pseudocode, ini ditulis dengan percabangan `if ... else` supaya program hanya punya satu `endprogram`.
+
+**Pseudocode:**
+
+```
+program isPrime
+
+kamus
+    x       : integer    { bilangan yang diperiksa }
+    isPrime : boolean    { true jika x bilangan prima }
+    i       : integer    { calon pembagi }
+
+algoritma
+    input(x)
+    if x <= 1 then
+        output(false)
+    else
+        isPrime <- true
+        for i <- 2 to x - 1 do
+            if x mod i = 0 then
+                isPrime <- false
+                break    { keluar dari perulangan }
+            endif
+        endfor
+        output(isPrime)
+    endif
+
+endprogram
+```
+
+**Contoh:**
+
+| Input | Output  | Penjelasan                     |
+| ----- | ------- | ------------------------------ |
+| `7`   | `true`  | tidak habis dibagi 2 sampai 6  |
+| `9`   | `false` | habis dibagi 3                 |
+| `1`   | `false` | kurang dari atau sama dengan 1 |
