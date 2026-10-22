@@ -1,4 +1,4 @@
-# Pseudocode dan Dokumentasi 10 Program latihan
+# Pseudocode dan Dokumentasi Program latihan
 
 Dokumen ini berisi konversi sepuluh program Go menjadi pseudocode dengan struktur:
 `program` → `kamus` → `algoritma` → `endprogram`.
@@ -17,6 +17,7 @@ Dokumen ini berisi konversi sepuluh program Go menjadi pseudocode dengan struktu
 | 8   | modulo       | Menghitung sisa bagi dua bilangan bulat                                      |
 | 9   | segitiga     | Memeriksa apakah tiga sisi dapat membentuk segitiga                          |
 | 10  | tigaDigit    | Memisahkan bilangan tiga digit menjadi digit ratusan, puluhan, dan satuan    |
+| 11  | isPalindrome | Memastikan bilangan terbaca sama dari depan maupun dari belakang             |
 
 ## Konvensi Penulisan
 
@@ -403,3 +404,67 @@ endprogram
 | Input | Output                   |
 | ----- | ------------------------ |
 | `456` | `d1 : 4  d2 : 5 d3 : 6 ` |
+
+## 11. isPalindrome
+
+**Deskripsi:** Program memanggil fungsi `isPalindrome` untuk memeriksa apakah suatu bilangan bulat merupakan palindrom (terbaca sama dari depan dan belakang). Pemeriksaan dilakukan tanpa mengubah bilangan menjadi string: hanya separuh digit bagian belakang yang dibalik, lalu dibandingkan dengan separuh bagian depan.
+
+**Input:** tidak ada (nilai uji ditulis langsung di program: `121`, `10`, `1221`)
+
+**Output:** `true` atau `false` untuk setiap nilai uji.
+
+**Cara kerja fungsi:**
+
+1. Bilangan negatif, atau bilangan yang berakhiran 0 (kecuali 0 sendiri), pasti bukan palindrom, sehingga langsung `false`.
+2. Selama `x > revertedNumber`, ambil digit terakhir `x`, tambahkan ke `revertedNumber`, lalu buang digit terakhir `x`.
+3. Perulangan berhenti saat separuh digit sudah terbalik. Bilangan palindrom jika `x = revertedNumber` (jumlah digit genap) atau `x = revertedNumber div 10` (jumlah digit ganjil; digit tengah dibuang).
+
+**Catatan:** Perulangan di sini bersyarat (`while`), bukan menghitung dari batas bawah ke batas atas, jadi ditutup dengan `endwhile`.
+
+**Pseudocode:**
+
+```
+program isPalindrome
+
+kamus
+    function isPalindrome(x : integer) -> boolean
+
+algoritma
+    output(isPalindrome(121))
+    output(isPalindrome(10))
+    output(isPalindrome(1221))
+
+endprogram
+
+
+function isPalindrome(x : integer) -> boolean
+
+kamus
+    revertedNumber : integer    { separuh digit belakang yang sudah dibalik }
+    digit          : integer    { digit terakhir dari x }
+
+algoritma
+    if (x < 0) or ((x mod 10 = 0) and (x <> 0)) then
+        return false
+    endif
+
+    revertedNumber <- 0
+
+    while x > revertedNumber do
+        digit <- x mod 10
+        revertedNumber <- (revertedNumber * 10) + digit
+        x <- x div 10
+    endwhile
+
+    return (x = revertedNumber) or (x = revertedNumber div 10)
+
+endfunction
+```
+
+**Contoh:**
+
+| Input  | Output  | Penjelasan                                    |
+| ------ | ------- | --------------------------------------------- |
+| `121`  | `true`  | x = 1, revertedNumber = 12, dan 12 div 10 = 1 |
+| `10`   | `false` | berakhiran 0, langsung `false`                |
+| `1221` | `true`  | x = 12, revertedNumber = 12                   |
