@@ -1,0 +1,1 @@
+Bagian ini menjelaskan kelompok pengguna utama yang menjadi sasaran dari desain pengalaman pengguna (User Experience Design). Target pengguna harus didefinisikan secara spesifik untuk memastikan bahwa desain mencerminkan kebutuhan, perilaku, dan preferensi mereka.

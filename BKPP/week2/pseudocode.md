@@ -205,7 +205,7 @@ kamus
 algoritma
     input(n)
     jumlah <- 1
-    for i <- 0 to n - 1 do
+    for i <- 0 to n do
         jumlah <- jumlah * (n - i)
     endfor
     output(jumlah)

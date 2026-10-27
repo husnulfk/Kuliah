@@ -1,0 +1,1 @@
+Bagian ini menjelaskan bagaimana pengguna berinteraksi dengan produk atau layanan dalam berbagai situasi nyata. Skenario penggunaan berfungsi untuk memberikan gambaran praktis tentang alur interaksi pengguna, manfaat yang diperoleh, dan bagaimana desain memenuhi kebutuhan mereka dalam konteks tertentu.

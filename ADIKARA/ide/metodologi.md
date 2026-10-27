@@ -1,0 +1,1 @@
+Bagian ini menjelaskan pendekatan sistematis yang digunakan untuk merancang pengalaman pengguna (User Experience). Metodologi desain mencakup langkah-langkah dan prinsip yang diterapkan untuk memahami kebutuhan pengguna, merancang solusi yang intuitif, dan menguji efektivitas desain.

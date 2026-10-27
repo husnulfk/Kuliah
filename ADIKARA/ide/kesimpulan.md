@@ -1,0 +1,1 @@
+Bagian ini merangkum poin-poin utama dari proses desain pengalaman pengguna, mencakup kebutuhan pengguna yang telah diidentifikasi, pendekatan desain yang digunakan, serta hasil yang diharapkan dari implementasi desain. Kesimpulan juga menyoroti bagaimana rancangan ini mampu memberikan solusi terhadap permasalahan pengguna sekaligus mencapai tujuan produk atau layanan.

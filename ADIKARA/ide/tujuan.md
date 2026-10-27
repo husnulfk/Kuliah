@@ -1,0 +1,1 @@
+Bagian ini menjelaskan sasaran utama dari proses desain pengalaman pengguna (User Experience Design). Tujuan mencakup upaya untuk menciptakan antarmuka dan interaksi yang intuitif, efisien, dan menyenangkan, serta memastikan produk atau layanan dapat memenuhi kebutuhan dan ekspektasi pengguna secara optimal.
